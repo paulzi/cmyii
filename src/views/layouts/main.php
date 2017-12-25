@@ -50,7 +50,7 @@ CmsAsset::register($this);
             </main>
         </div>
         <footer id="l-footer">
-            Copyright © <?= date('Y') ?> Cmyii <?= \paulzi\cmyii\Cmyii::getInstance()->getVersion() ?> / Yii Framework <?= Yii::getVersion() ?>
+            Copyright © <?= date('Y') ?> CMYii <?= \paulzi\cmyii\Cmyii::getInstance()->getVersion() ?> / Yii Framework <?= Yii::getVersion() ?>
         </footer>
 
         <?= \paulzi\cmyii\admin\widgets\Alert::widget() ?>

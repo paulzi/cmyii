@@ -17,7 +17,7 @@ use paulzi\cmyii\admin\models\Layout;
         <?php $form = ActiveForm::begin(); ?>
             <?= $form->field($model, 'title')->textInput() ?>
             <?= $form->field($model, 'domains')->textarea(['class' => 'form-control auto-size']) ?>
-            <?= $form->field($model, 'is_disabled')->switcher(['uncheck' => '1', 'value' => '0', 'label' => 'Включён']) ?>
+            <?= $form->field($model, 'is_disabled')->switcher(['uncheck' => '1', 'value' => '', 'label' => 'Включён']) ?>
 
             <?php /* расширение формы */ ?>
             <?php if ($template = $model->extraFormTemplate()): ?>

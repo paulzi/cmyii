@@ -47,7 +47,7 @@ $state->state_children = $state->state_children !== null ? (int)$state->state_ch
             <?= $form->field($state, 'roles')->hint('список ролей через запятую (* - доступен всем, ? - доступен неавторизированным, @ - доступен авторизованным)')->textInput() ?>
 
             <?php /* расширение формы */ ?>
-            <?php if ($template = $model->extraFormTemplate()): ?>
+            <?php if ($template = $block->extraFormTemplate()): ?>
                 <?= $this->render($template, [
                     'form'  => $form,
                     'block' => $block,

@@ -6,6 +6,10 @@ CMYii provides only a framework for management with data, you need to implement 
 
 This module provides the admin system itself.
 
+## Demo
+
+[http://cmyii.paulzi.ru/admin](http://cmyii.paulzi.ru/admin)
+
 ## Install
 
 ```bash
@@ -61,9 +65,23 @@ return [
 ];
 ```
 
+### Add area in layout
+
+Add Area widgets in your layout:
+
+```php
+<?= \paulzi\cmyii\widgets\Area::widget(['id' => 'main']) ?>
+```
+
+### Configure RBAC
+
+[Configure RBAC](http://www.yiiframework.com/doc-2.0/guide-security-authorization.html#rbac) and add `admin` role. 
+
 ### Implement block widget
 
 See in [`example` folder](https://github.com/paulzi/cmyii/blob/master/example) for text block widget sample.
+
+Add your first layout and site (example `domains`: `http?://*`).
 
 Include widget in `adminBlocks` section of config module.
 
