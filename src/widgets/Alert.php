@@ -56,11 +56,11 @@ class Alert extends Widget
      * @param array $options
      * @return string
      */
-    public static function item(string $content, string $type = null, array $options = [])
+    public static function item($content, $type = null, array $options = [])
     {
         Html::addCssClass($options, 'alert');
         if ($type !== null) {
-            $class = static::$cssClassMap[$type] ?? null;
+            $class = isset(static::$cssClassMap[$type]) ? static::$cssClassMap[$type] : null;
             if ($class) {
                 Html::addCssClass($options, $class);
             }
