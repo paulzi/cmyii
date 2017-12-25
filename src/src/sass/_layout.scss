@@ -96,7 +96,17 @@ html, body {
     }
 
     & > .container {
-      //width: 100%;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        width: 682px;
+      }
+
+      @media (min-width: 1200px) and (max-width: 1479px) {
+        width: 890px;
+      }
+
+      @media (min-width: 1480px) {
+        width: 1170px;
+      }
     }
   }
 
