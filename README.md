@@ -6,10 +6,6 @@ CMYii provides only a framework for management with data, you need to implement 
 
 This module provides the admin system itself.
 
-## Demo
-
-[http://cmyii.paulzi.ru/admin](http://cmyii.paulzi.ru/admin)
-
 ## Install
 
 ```bash
