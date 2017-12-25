@@ -1,0 +1,70 @@
+@import "~summernote/dist/summernote.css";
+
+.pz-area {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  outline: dotted 2px #ccc;
+
+  &:before {
+    content: 'Область';
+    color: #ccc;
+  }
+}
+
+.note-btn {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  & > i.icon {
+    line-height: 1;
+  }
+}
+
+.note-editable {
+  .pz-cols {
+    overflow: hidden;
+
+    & > .row {
+      > .note-editable {
+        padding: 15px;
+        overflow: visible;
+        background: transparent;
+        border: dashed 1px #ddd;
+      }
+    }
+  }
+
+  .pz-area {
+    &:before {
+      content: '';
+    }
+  }
+
+  img {
+    width: 100% !important;
+  }
+}
+
+.note-btn.active,
+.note-btn:active,
+.note-btn:hover,
+.note-btn:active:hover,
+.note-btn.active:hover,
+.note-btn:active:focus,
+.note-btn.active:focus,
+.note-btn.focus:active,
+.note-btn.active.focus {
+  color: #fff;
+  background-color: #3f51b5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.note-popover .popover-content .dropdown-menu,
+.panel-heading.note-toolbar .dropdown-menu {
+  min-width: 240px;
+}

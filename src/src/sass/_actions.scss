@@ -1,0 +1,63 @@
+.actions {
+
+  .dropdown-menu {
+    & > li {
+      & > .actions-item {
+        padding-left: 10px;
+
+        & > .icon {
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  & > &-item {
+    margin-left: 0.5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    & > span {
+      font-size: 0;
+    }
+
+    & > i.icon {
+      font-size: 24px;
+      vertical-align: middle;
+      color: #aaa;
+    }
+
+    &:hover {
+      & > i.icon {
+        color: #333;
+      }
+    }
+  }
+
+  & > .btn-icon {
+    font-size: 16px;
+
+    & > i.icon {
+      font-size: inherit;
+      color: inherit;
+      vertical-align: baseline;
+    }
+
+    & > span {
+      font-size: 0;
+    }
+  }
+}
+
+.global-actions {
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+
+  & > .btn-icon {
+    font-size: 24px;
+  }
+}

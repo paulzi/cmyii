@@ -1,0 +1,45 @@
+.modal {
+  text-align: center;
+  transition: all 0.2s ease !important;
+
+  &:before {
+    @media (min-width: 768px) {
+      content: ' ';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+
+  &-content {
+    border-radius: 2px;
+  }
+
+  &-backgrop {
+    &.in {
+      opacity: 0.3;
+    }
+  }
+
+  &-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  &.in {
+    .modal {
+      &-dialog {
+        transform: scale(1) translate(0, 0) !important;
+      }
+    }
+  }
+
+  &.fade {
+    .modal {
+      &-dialog {
+        transform: scale(0.7) translate(0, 0);
+      }
+    }
+  }
+}

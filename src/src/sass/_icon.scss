@@ -1,0 +1,54 @@
+.icon {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  line-height: 1;
+  text-align: center;
+  text-transform: none;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+
+  &-spin {
+    animation: fa-spin 2s infinite linear;
+  }
+
+  &-24, &-32, &-48 {
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  &-24 {
+    font-size: 24px;
+  }
+
+  &-32 {
+    font-size: 32px;
+  }
+
+  &-48 {
+    font-size: 48px;
+  }
+
+  &-flip-h {
+    transform: scaleX(-1);
+  }
+
+  &-flip-v {
+    transform: scaleY(-1);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}

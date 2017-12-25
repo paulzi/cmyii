@@ -1,0 +1,127 @@
+@import "variables";
+
+.panel {
+  background-color: #fafafa;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  &-heading {
+    padding: 22px 25px;
+    color: #000;
+    border: none;
+
+    & + .panel-body {
+      padding-top: 0;
+    }
+  }
+
+  &-footer {
+    background-color: transparent;
+  }
+
+  &-title {
+    font-weight: 400;
+
+    & > small {
+      display: block;
+      margin-top: 10px;
+      font-size: 69%;
+      color: $cl-gray;
+    }
+  }
+
+  & .summary {
+    font-size: 12px;
+
+    & > b {
+      font-weight: 400;
+    }
+  }
+
+  &-default,
+  &-primary,
+  &-info {
+    & > .panel-body {
+      padding-top: 15px;
+    }
+  }
+
+  &-default {
+    & > .panel-heading {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &-primary {
+    > .panel-heading {
+      color: #fff;
+      background-color: $cl-primary;
+    }
+  }
+
+  &-info {
+    > .panel-heading {
+      color: #fff;
+      background-color: $cl-info;
+    }
+  }
+
+  &-collapse {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+
+    .panel-body {
+      padding: 0;
+    }
+
+    & > .panel-heading {
+      padding: 0;
+      margin-bottom: 15px;
+
+      & > .panel-title {
+        position: relative;
+        padding: 4px 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: #000;
+
+        & > a {
+          color: #000;
+
+          &:after {
+            content: ' ';
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #673ab7;
+            transform-origin: 0 0;
+            transform: scaleX(1);
+            transition: transform 0.3s;
+          }
+
+          & > .icon-more {
+            font-size: 24px;
+            vertical-align: middle;
+            transform: rotate(180deg);
+            transition: transform 0.3s;
+          }
+
+          &.collapsed {
+            &:after {
+              transform: scaleX(0);
+            }
+
+            & > .icon-more {
+              transform: rotate(0deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

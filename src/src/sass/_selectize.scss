@@ -1,0 +1,87 @@
+@import "~selectize/dist/css/selectize.css";
+
+.selectize {
+
+  &-input, &-control.single, &-input.input-active {
+    background-color: #fafafa;
+  }
+
+  &-input {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-bottom: solid 1px #e0e0e0;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      z-index: 2;
+      display: block;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #673ab7;
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    &.dropdown-active {
+      &:before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &-control.single {
+    .selectize-input {
+      background: #fafafa none;
+      box-shadow: none;
+
+      &:after {
+        border-color: #999 transparent transparent;
+        border-width: 7px 7px 0;
+        transition: transform 0.3s;
+      }
+
+      &.dropdown-active {
+        &:after {
+          border-color: #999 transparent transparent;
+          border-width: 7px 7px 0;
+          -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  &-control.single &-input, &-dropdown.single {
+    border-color: #e0e0e0;
+  }
+
+  &-dropdown, &-input, &-input input {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  &-dropdown {
+    display: block !important;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transform-origin: 0 0;
+    transform: scale(0);
+    transition: transform 0.3s, opacity 0.3s;
+
+    .dropdown-active + & {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

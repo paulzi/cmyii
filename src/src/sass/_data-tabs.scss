@@ -1,0 +1,25 @@
+.data-tabs {
+  & > &-switch {
+    padding-top: 15px;
+  }
+
+  & > &-disabled {
+    display: none;
+
+    & > a {
+      color: #aaa;
+    }
+  }
+
+  &.toggle-on {
+    & > .data-tabs-disabled {
+      display: block;
+
+      & > a {
+        & > .icon {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

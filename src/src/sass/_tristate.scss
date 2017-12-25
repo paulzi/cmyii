@@ -1,0 +1,124 @@
+@import "variables";
+
+.tristate {
+  & > input {
+    &:first-child {
+      z-index: 10;
+
+      &:checked {
+        z-index: 0;
+      }
+    }
+
+    &:checked {
+      & + input {
+        z-index: 10;
+      }
+    }
+  }
+
+  &-3 {
+    & > input {
+      &:checked {
+        & + i {
+          & + label, & + label + label {
+            display: none;
+          }
+        }
+
+        & + input {
+          & + i {
+            & + label, & + label + label + label {
+              display: none;
+            }
+          }
+
+          & + input {
+            & + i {
+              & + label + label, & + label + label + label {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.switch-check {
+      & > input {
+        &:checked {
+          & + input {
+            & + i {
+              &:before {
+                background-color: $cl-gray-dark;
+                transform: scale(1);
+                opacity: 1;
+              }
+
+              &:after {
+                width: 10px;
+                height: 0;
+                margin-left: 2px;
+                margin-top: -10px;
+                transform: rotate(0deg) scale(1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.switch-swipe {
+      & > input {
+        & + i {
+          background-color: $cl-danger-light;
+
+          &:before {
+            background-color: $cl-danger;
+          }
+        }
+
+        &:checked {
+          & + i {
+            background-color: $cl-success-light;
+
+            &:before {
+              background-color: $cl-success;
+            }
+          }
+
+          & + input[type="radio"] {
+            & + i {
+              background-color: $cl-gray;
+
+              &:before {
+                transform: translateX(8px);
+                background-color: $cl-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-2 {
+    & > input {
+      &:checked {
+        & + i {
+          & + label {
+            display: none;
+          }
+        }
+
+        & + input {
+          & + i {
+            & + label + label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

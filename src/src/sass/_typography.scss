@@ -1,0 +1,60 @@
+body {
+  font: 13px/1.4 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #555;
+  background-color: #e7e7e7;
+}
+
+a {
+  color: #673ab7;
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    color: #673ab7;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:focus {
+    outline: dotted 1px #673ab7;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1, .h1 {
+  font-size: 33px;
+}
+
+h2, .h2 {
+  font-size: 27px;
+}
+
+h3, .h3 {
+  font-size: 23px;
+}
+
+h4, .h4 {
+  font-size: 17px;
+}
+
+h5, .h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+h6, .h6 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+label {
+  font-weight: 500;
+  color: black;
+}

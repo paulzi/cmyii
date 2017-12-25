@@ -1,0 +1,85 @@
+.btn {
+  padding: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s;
+
+  &, &:active, &.active {
+    &:focus, &.focus {
+      outline: none;
+    }
+  }
+
+  &:hover, &:focus, &.focus, &:active, &.active {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.17), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 7px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &-icon {
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    line-height: 1;
+    border-radius: 50%;
+  }
+
+  @mixin button-variant {
+    &, &:hover, &:focus, &.focus, &:active, &.active {
+      @content;
+    }
+  }
+
+  &-default {
+    @include button-variant {
+      background-color: rgba(158, 158, 158, 0.2);
+    }
+  }
+
+  &-primary {
+    @include button-variant {
+      background-color: #673ab7;
+    }
+  }
+
+  &-success {
+    @include button-variant {
+      background-color: #4caf50;
+    }
+  }
+
+  &-warning {
+    @include button-variant {
+      background-color: #ffc107;
+    }
+  }
+
+  &-info {
+    @include button-variant {
+      background-color: #ff4081;
+    }
+  }
+
+  &-danger {
+    @include button-variant {
+      background-color: #f44336;
+    }
+  }
+
+  &-link {
+    @include button-variant {
+      text-transform: inherit;
+      box-shadow: none;
+    }
+  }
+}

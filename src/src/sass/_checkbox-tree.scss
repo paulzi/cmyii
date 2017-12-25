@@ -1,0 +1,23 @@
+@import "variables";
+
+.checkbox-tree {
+  max-height: 216px;
+  padding: 8px;
+  overflow: auto;
+  border: solid 1px $cl-gray-light;
+  border-radius: 4px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 30px;
+
+    & > li {
+      margin-top: 5px;
+    }
+  }
+
+  & > ul {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,120 @@
+.table {
+  background-color: #fafafa;
+
+  @mixin table-cell {
+    & > thead,
+    & > tbody,
+    & > tfoot {
+      & > tr {
+        & > th, & > td {
+          @content;
+        }
+      }
+    }
+  }
+
+  @mixin table-status ($status) {
+    & > thead,
+    & > tbody,
+    & > tfoot {
+      & > tr {
+        & > th.#{$status},
+        & > td.#{$status},
+        &.#{$status} > th,
+        &.#{$status} > td {
+          @content;
+        }
+      }
+    }
+  }
+
+  @include table-cell {
+    border-color: #eaeaea;
+    padding: 10px;
+
+    p, h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      padding-left: 25px;
+    }
+
+    &:last-child {
+      padding-right: 25px;
+    }
+  }
+
+  & > thead {
+    & > tr {
+      & > th {
+        border-width: 1px;
+        color: #333;
+        font-weight: 500;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  & > tbody, & > tfoot {
+    & > tr {
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  & > tbody {
+    & + tbody {
+      border-color: #eaeaea;
+    }
+  }
+
+  &-striped {
+    & > tbody > tr:nth-of-type(2n+1) {
+      background-color: #f1f1f1;
+    }
+
+    @include table-cell {
+      border: none
+    }
+  }
+
+  &-bordered {
+    @include table-cell {
+      border: solid 1px #eaeaea;
+    }
+  }
+
+  &-condensed {
+    @include table-cell {
+      padding: 6px;
+    }
+  }
+
+  &-hover {
+    & > tbody > tr:hover {
+      background-color: #ffe8f0;
+    }
+  }
+
+  @include table-status('active') {
+    background-color: #e6d9ff;
+  }
+
+  @include table-status('success') {
+    background-color: #d9ffda;
+  }
+
+  @include table-status('warning') {
+    background-color: #fcf8e2;
+  }
+
+  @include table-status('danger') {
+    background-color: #ffdbd9;
+  }
+
+  @include table-status('info') {
+    background-color: #ffafca;
+  }
+}

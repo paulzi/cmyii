@@ -1,0 +1,245 @@
+@import "variables";
+
+.lv {
+  &-panel {
+    margin-bottom: 10px;
+
+    &:after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+  }
+
+  &-icon {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+
+    & > .tooltip {
+      display: none;
+      left: 31px;
+      top: 0;
+      opacity: 1;
+    }
+
+    &:focus, &:hover {
+      & > .tooltip {
+        display: block;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+
+    .lv-reorder-on & {
+      cursor: move;
+    }
+
+    &.lv-info .lv-icon {
+      color: #999;
+    }
+
+    &.lv-danger .lv-icon {
+      color: #f44336;
+    }
+
+    &.lv-warning .lv-icon {
+      color: #ffc107;
+    }
+
+    &.lv-success .lv-icon {
+      color: #4caf50;
+    }
+  }
+
+  &-reorder {
+    &-hidden {
+      .lv-reorder-on & {
+        display: none;
+      }
+    }
+
+    &-visible {
+      .lv-reorder-off & {
+        display: none;
+      }
+    }
+
+    &-toggler {
+      i.icon {
+        .lv-reorder-on & {
+          color: $cl-primary;
+        }
+      }
+    }
+  }
+
+  &-mass {
+    &-check {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      &-cell {
+        position: relative;
+        width: 30px;
+        padding: 7px 10px !important;
+
+        .lv-mass-check {
+          background-color: transparent;
+
+          & > input {
+            & + i {
+              border-color: $cl-gray;
+
+              &:before {
+                display: block;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+              }
+
+              &:after {
+                margin-top: -26px;
+              }
+            }
+          }
+        }
+
+        .actions {
+          .lv-mass-on & {
+            visibility: hidden;
+          }
+        }
+      }
+
+      & > input, & > input + i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 32px;
+        height: 32px;
+        margin-left: -16px;
+        margin-top: -16px;
+      }
+
+      & > input {
+        & + i {
+          border: solid 3px $cl-white;
+          border-radius: 50%;
+
+          &:before {
+            display: none;
+          }
+
+          &:after {
+            color: $cl-white;
+            width: 21px;
+            height: 12px;
+            margin-left: 2px;
+            margin-top: 4px;
+            border-left-width: 4px;
+            border-bottom-width: 4px;
+          }
+        }
+
+        &:checked {
+          & + i {
+            &:before {
+            }
+          }
+        }
+      }
+    }
+
+    &-hidden {
+      .lv-mass-on & {
+        display: none;
+      }
+    }
+
+    &-visible {
+      .lv-mass-off & {
+        display: none;
+      }
+    }
+
+    &-toggler {
+      i.icon {
+        .lv-mass-on & {
+          color: $cl-primary;
+        }
+      }
+    }
+  }
+
+  &-status-cell {
+    width: 30px;
+    height: 1em;
+    padding: 7px 10px !important;
+
+    & > .lv-icon {
+      line-height: 0;
+    }
+  }
+
+  &-standard {
+    border-left: solid 4px transparent;
+
+    &.lv-success {
+      border-color: #4caf50;
+    }
+
+    &.lv-info {
+      border-color: #999;
+    }
+
+    &.lv-warning {
+      border-color: #ffc107;
+    }
+
+    &.lv-danger {
+      border-color: #f44336;
+    }
+
+    & > .panel-heading,
+    & > .panel-body {
+      padding-left: 40px;
+
+      & > .lv-icon {
+        float: left;
+        margin-left: -32px;
+      }
+    }
+
+    .lv-item-actions {
+      float: right;
+    }
+
+    .lv-mass-check {
+      left: -4px;
+    }
+  }
+
+  &-global {
+    padding-top: 10px;
+    text-align: right;
+  }
+
+  .panel {
+    & > .panel-body {
+      & > .lv-grid {
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+    }
+  }
+}

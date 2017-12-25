@@ -1,0 +1,35 @@
+.bootbox {
+  &-body {
+    margin: 15px 0;
+    font-size: 16px;
+  }
+
+  &-danger {
+    .modal {
+      &-dialog {
+        text-align: center;
+      }
+
+      &-footer {
+        text-align: center;
+        border-top: none;
+      }
+    }
+
+    .bootbox-body {
+      &:before {
+        content: "\e001";
+        display: block;
+        font: 64px/1 'MaterialIcons';
+        text-decoration: inherit;
+        text-transform: none;
+        font-variant: normal;
+        color: #f44336;
+      }
+    }
+
+    .btn-primary {
+      background-color: #f44336;
+    }
+  }
+}

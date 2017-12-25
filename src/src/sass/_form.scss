@@ -1,0 +1,121 @@
+.form {
+  &-control {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: inherit;
+    background-color: #fafafa;
+    border: none;
+    border-bottom: solid 1px #e0e0e0;
+    border-radius: 0;
+    box-shadow: none;
+    max-height: 60vh;
+
+    &:focus {
+      border-color: #e0e0e0;
+      box-shadow: none;
+    }
+
+    &-wrap {
+      position: relative;
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        z-index: 2;
+        display: block;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #673ab7;
+        transform-origin: 0 0;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+
+        .has-error & {
+          background-color: #f44336;
+        }
+
+        .has-success & {
+          background-color: #4caf50;
+        }
+      }
+
+      .input-group & {
+        display: table-cell;
+      }
+    }
+
+    &-focus {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+
+    .has-error &,
+    .has-warning &,
+    .has-success & {
+      box-shadow: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .has-error & {
+      border-color: #f44336;
+    }
+
+    .has-success & {
+      border-color: #4caf50;
+    }
+
+    .has-warning & {
+      border-color: #ffc107;
+    }
+  }
+
+  &-group {
+    margin-bottom: 25px;
+
+    & > label {
+      & + .switch {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin has-status {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  .checkbox-style input + i:after
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label {
+    @content;
+  }
+}
+
+.has-error {
+  @include has-status {
+    color: #f44336;
+  }
+}
+
+.has-warning {
+  @include has-status {
+    color: #ffc107;
+  }
+}
+
+.has-success {
+  @include has-status {
+    color: #4caf50;
+  }
+}

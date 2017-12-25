@@ -1,0 +1,25 @@
+{
+    "name": "paulzi/cmyii",
+    "description": "CMYii - is CMS admin system based on Yii Framework 2",
+    "keywords": ["cmyii"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/paulzi/cmyii/issues?state=open",
+        "source": "https://github.com/paulzi/cmyii"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "paulzi/cmyii-core": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "paulzi\\cmyii\\admin\\": "src"
+        }
+    }
+}

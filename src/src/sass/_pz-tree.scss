@@ -1,0 +1,82 @@
+@import "variables";
+
+.pz-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    position: relative;
+    padding: 0 0 0 29px;
+
+    &.active {
+      & > a {
+        background-color: $cl-gray-lighter;
+      }
+    }
+
+    & > .pz-tree {
+      margin-left: -12px;
+    }
+
+    & > a {
+      display: block;
+      padding: 5px 0;
+      white-space: nowrap;
+      color: #444;
+
+      & > i {
+        font-size: 24px;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    & > i {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      font-size: 24px;
+      transition: transform 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+      }
+
+      &.icon-spin {
+        display: none;
+      }
+    }
+
+    &.pz-tree-loading {
+      & > i {
+        display: none;
+
+        &.icon-spin {
+          display: inline-block;
+        }
+      }
+    }
+
+    &.pz-tree-expand {
+      & > i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.pz-tree > li > a {
+  display: block;
+  padding: 5px 0;
+  white-space: nowrap;
+  color: #444;
+}
+
+.pz-tree > li > a:hover {
+  color: #000;
+}

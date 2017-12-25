@@ -1,0 +1,57 @@
+.nav {
+  &-tabs {
+    border-bottom: solid 1px #e0e0e0;
+
+    & > li {
+      & > a {
+        padding: 15px 20px;
+        text-transform: uppercase;
+        color: #666;
+        border: none;
+        border-radius: 0;
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          display: block;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #673ab7;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: transform 0.3s;
+          transition: transform 0.3s;
+        }
+
+        &:hover, &:focus {
+          color: #000;
+          background-color: transparent;
+          border: none;
+        }
+      }
+
+      &.active {
+        & > a {
+
+          &:after {
+            transform: scaleX(1);
+          }
+
+          &, &:hover, &:focus {
+            color: #000;
+            background-color: transparent;
+            border: none;
+          }
+        }
+      }
+    }
+
+    &-main {
+      margin-bottom: 18px;
+    }
+  }
+}
