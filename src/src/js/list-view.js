@@ -62,7 +62,7 @@ import Sortable from 'sortablejs';
     $(document).on('click', '.lv-mass-all', function (e) {
         e.preventDefault();
         let $list = $(this).closest('.lv').find('.lv-mass-check input[type="checkbox"]');
-        if ($list.filter(function () { return !this.checked; }).size()) {
+        if ($list.filter(function () { return !this.checked; }).length) {
             $list.prop('checked', true);
         } else {
             $list.prop('checked', false);

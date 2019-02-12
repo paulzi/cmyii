@@ -8,7 +8,7 @@ $(document).on('contentinit', function (e, $elements) {
         }
         if ($form.hasClass('form-simple-validate') || $btn.hasClass('btn-simple-validate')) {
             $form.yiiActiveForm('validate');
-            if ($form.find('.has-error').size()) {
+            if ($form.find('.has-error').length) {
                 e.stopImmediatePropagation();
                 e.preventDefault();
                 return false;
