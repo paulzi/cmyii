@@ -3,6 +3,7 @@
 namespace paulzi\cmyii\admin\widgets;
 
 use paulzi\fileBehavior\File;
+use paulzi\fileBehavior\FileMultiple;
 use yii\base\Model;
 use yii\base\Widget;
 use yii\helpers\Html;
@@ -62,12 +63,14 @@ class FileInput extends Widget
     {
         if ($this->model && $this->attribute) {
             $this->value = $this->value ?: $this->model->{$this->attribute};
-            $this->name  = $this->name  ?: Html::getInputName($this->model, $this->attribute) . (is_array($this->value) ? '[]' : null);
+            $isMultiple  = is_array($this->value) || $this->value instanceof FileMultiple;
+            $this->name  = $this->name  ?: Html::getInputName($this->model, $this->attribute) . ($isMultiple ? '[]' : null);
         }
-        $this->value = is_array($this->value) ? $this->value : ($this->value && $this->value->value ? [$this->value] : []);
+        $isMultiple  = is_array($this->value) || $this->value instanceof FileMultiple;
+        $this->value = $isMultiple ? $this->value : ($this->value && $this->value->value ? [$this->value] : []);
 
         Html::addCssClass($this->options, 'file-styler file-styler-uninitialized');
-        if (!$this->value) {
+        if (!$this->value || ($this->value instanceof FileMultiple && !$this->value->value)) {
             Html::addCssClass($this->options, 'file-styler-empty');
         }
         if ($this->accept === null && strpos($this->options['class'], 'file-styler-type-image') !== false) {

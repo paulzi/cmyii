@@ -39,6 +39,12 @@ window.FileStyler = (function () {
             e.preventDefault();
             that.clear();
         };
+		
+		let remove = function (e) {
+            e.preventDefault();
+            $(this).closest('.' + baseClass + '-item').remove();
+        };
+
 
         options  = $.extend({}, FileStyler.default, options);
         let that = this;
@@ -59,6 +65,7 @@ window.FileStyler = (function () {
             $file.removeAttr('multiple').prop('multiple', false);
         }
         $element.find('.' + baseClass + '-clear').on('click', clear);
+		$element.find('.' + baseClass + '-remove').on('click', remove);
         $element
             .data(pluginName + 'Item', this)
             .removeClass(baseClass + '-uninitialized')

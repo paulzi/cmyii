@@ -2,6 +2,7 @@
 
 namespace paulzi\cmyii\admin\validators;
 
+use paulzi\fileBehavior\FileMultiple;
 use Yii;
 use yii\helpers\Html;
 use yii\validators\FileValidator;
@@ -48,7 +49,7 @@ class FileUploadValidator extends FileValidator
 
         foreach ($this->attributes as $attribute) {
             $model->$attribute = $files[$attribute];
-            $isMultipleFile = is_array($model->$attribute);
+            $isMultipleFile = is_array($model->$attribute) || $model->$attribute instanceof FileMultiple;
             $data  = Yii::$app->request->post($model->formName() ?: []);
             $value = isset($data[$attribute]) ? $data[$attribute] : null;
             $value = is_array($value) ? array_filter($value) : ($value ? [$value] : []);

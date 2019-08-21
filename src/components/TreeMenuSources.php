@@ -6,10 +6,10 @@ use paulzi\cmyii\admin\CmyiiAdmin;
 use paulzi\cmyii\models\Layout;
 use paulzi\cmyii\models\Page;
 use paulzi\cmyii\models\Site;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\web\NotFoundHttpException;
 
-abstract class TreeMenuSources extends Object
+abstract class TreeMenuSources extends BaseObject
 {
     /**
      * @param null $id

@@ -62,6 +62,19 @@
     cursor: pointer;
   }
 
+  &-helper {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    outline: solid 1px #f00;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+
+    .file-styler-crop & {
+      display: block;
+    }
+  }
+
   &-clear {
     .file-styler-empty & {
       display: none;
@@ -70,6 +83,7 @@
 
   &-type-image {
     .file-styler {
+
       &-item {
         position: relative;
         display: inline-block;
@@ -113,15 +127,71 @@
         bottom: 0;
         display: block;
 
-        & > img {
+        &-inner {
           position: absolute;
           left: 50%;
           top: 50%;
+          margin-right: -50%;
+          max-width: 100%;
+          max-height: 100%;
           transform: translate(-50%, -50%);
         }
       }
 
       &-name {
+        display: none;
+      }
+
+      &-remove {
+        position: absolute;
+        right: 6%;
+        top: 0;
+        font-size: 32px;
+        line-height: 17px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        background-color: #f00;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-compact {
+    position: relative;
+
+    .file-styler {
+
+      &-item {
+        width: 32px;
+      }
+
+      &-file {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        border: dashed 1px $cl-gray-light;
+        background-color: transparent;
+        font-size: 0;
+        box-shadow: none;
+      }
+
+      &-clear {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        font-size: 0;
+      }
+
+      &-remove {
         display: none;
       }
     }

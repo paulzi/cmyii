@@ -18,6 +18,7 @@ $isMultiple = substr($widget->name, -2) === '[]';
                     <div class="file-styler-image"><?= Html::img($widget->thumbType ? $file->{$widget->thumbType}->url : $file->url) ?></div>
                 <?php endif; ?>
                 <div class="file-styler-name"><i class="icon"></i><?= Html::encode(basename($file->value)) ?></div>
+				<div class="file-styler-remove">&times;</div>
             </div>
         <?php endforeach; ?>
     </div>
