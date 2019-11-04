@@ -9,6 +9,7 @@ use yii\helpers\Html;
 $isMultiple = substr($widget->name, -2) === '[]';
 ?>
 <?= Html::beginTag('div', $widget->options) ?>
+    <?= Html::hiddenInput($widget->name, '') ?>
     <div class="file-styler-list">
         <?php foreach ($widget->value as $file): ?>
             <?php $isImage = in_array(pathinfo($file->value, PATHINFO_EXTENSION), ['jpg', 'png', 'gif']); ?>
