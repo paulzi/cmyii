@@ -1,7 +1,6 @@
 import 'summernote';
 
 if ($.summernote) {
-    $.summernote.ui = $.summernote.ui_template();
     $.summernote.ui.icon = function (iconClassName, tagName) {
         tagName = tagName || 'i';
         return '<' + tagName + ' class="icon icon-24">' + iconClassName + '</' + tagName + '>';
