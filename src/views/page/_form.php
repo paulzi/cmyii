@@ -14,7 +14,9 @@ use paulzi\cmyii\admin\models\Layout;
 
 <div class="panel">
     <div class="panel-body">
-        <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin([
+            'options' => ['enctype' => 'multipart/form-data'],
+        ]); ?>
         <?= $form->field($model, 'title')->textInput() ?>
         <?php if ($model->isNewRecord || !$model->isRoot()): ?>
             <?= $form->field($model, 'slug')->textInput() ?>

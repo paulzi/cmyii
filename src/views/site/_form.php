@@ -14,7 +14,9 @@ use paulzi\cmyii\admin\models\Layout;
 
 <div class="panel">
     <div class="panel-body">
-        <?php $form = ActiveForm::begin(); ?>
+        <?php $form = ActiveForm::begin([
+            'options' => ['enctype' => 'multipart/form-data'],
+        ]); ?>
             <?= $form->field($model, 'title')->textInput() ?>
             <?= $form->field($model, 'domains')->textarea(['class' => 'form-control auto-size']) ?>
             <?= $form->field($model, 'is_disabled')->switcher(['uncheck' => '1', 'value' => '', 'label' => 'Включён']) ?>
