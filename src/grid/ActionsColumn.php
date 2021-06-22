@@ -19,6 +19,11 @@ class ActionsColumn extends Column
     public $massName = 'mass[]';
 
     /**
+     * @var callable|null
+     */
+    public $massValue;
+
+    /**
      * @var string
      */
     public $massFormId;
@@ -40,11 +45,15 @@ class ActionsColumn extends Column
             $result .= $actions->run();
         }
 
-        $result .= Html::checkbox($this->massName, false, [
-            'labelOptions' => ['class' => 'lv-mass-check lv-mass-visible'],
-            'value'        => $model->primaryKey,
-            'form'         => $this->massFormId,
-        ]);
+        if ($this->massName) {
+            $value = $this->massValue ? call_user_func($this->massValue, $model) : $model->primaryKey;
+            $value = is_array($value) ? implode('_', $value) : $value;
+            $result .= Html::checkbox($this->massName, false, [
+                'labelOptions' => ['class' => 'lv-mass-check lv-mass-visible'],
+                'value'        => $value,
+                'form'         => $this->massFormId,
+            ]);
+        }
 
         return $result;
     }
