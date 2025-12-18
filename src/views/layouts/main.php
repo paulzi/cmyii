@@ -31,7 +31,7 @@ CmsAsset::register($this);
         <div id="l-main">
             <?php if (!Yii::$app->user->isGuest): ?>
                 <aside id="l-side" class="toggle-off">
-                    <div>
+                    <div style="overflow:auto">
                         <nav>
                             <?php if (Yii::$app->user->can('admin')): ?>
                                 <?= \paulzi\cmyii\admin\widgets\TreeMenuWidget::widget([
