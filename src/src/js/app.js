@@ -11,7 +11,7 @@ import './file-styler';
 import './form-control-focus';
 import './list-view';
 import './modal-remote';
-import './nice-scroll';
+// import './nice-scroll';
 import './pz-copy';
 import './pz-tree';
 import './selectize';
