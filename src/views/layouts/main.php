@@ -9,7 +9,7 @@ CmsAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="no-js scroll">
+<html lang="<?= Yii::$app->language ?>" class="no-js">
     <head>
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -31,7 +31,7 @@ CmsAsset::register($this);
         <div id="l-main">
             <?php if (!Yii::$app->user->isGuest): ?>
                 <aside id="l-side" class="toggle-off">
-                    <div class="scroll">
+                    <div>
                         <nav>
                             <?php if (Yii::$app->user->can('admin')): ?>
                                 <?= \paulzi\cmyii\admin\widgets\TreeMenuWidget::widget([
