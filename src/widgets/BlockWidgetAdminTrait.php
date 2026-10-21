@@ -43,7 +43,7 @@ trait BlockWidgetAdminTrait
      */
     public static function getFrontendWidgetClass()
     {
-        return get_parent_class();
+        return get_parent_class(get_called_class());
     }
 
     /**
